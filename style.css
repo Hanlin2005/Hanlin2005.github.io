@@ -25,6 +25,8 @@ img{
   line-height:1.5;
   margin:1rem;
 }
+
+
 /* Header Stuff*/
 .header{
   left: 0;
@@ -61,50 +63,67 @@ a:hover {
 
 .intro{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
-  padding: 60px 40px;
-  max-width: 1200px;
 }
 
-#headshot {
-  flex: 1;
+  /*intro stuff*/
+.rightintro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftintro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#contactinfo{
+  display: flex;
+  flex-direction: row;
+}
+
+#linkedinlogo, #githublogo, #emailicon{
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  margin-top: 50px;
+}
+#description{
+  text-align: left;
+  font-size: 1.8rem;
+}
+#education{
   text-align: center;
-  width: 45%;
-  display:inline-block;
-  vertical-align:top;
-}
-#aboutme {
-  flex: 1.5;
-  display:inline-block;
-  vertical-align:top;
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
-#headshot img{
-  border-radius:50%;
-  border: 4px solid white;
-  object-fit:cover;
+#headshot{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:80%;
+  padding: 30px;
+  border-radius: 20%;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-top: 50px;
+}
+#headshot img{
+  border-radius: 20%;
 }
 
-#prename{
-  font-size:1.25rem;
-  color: #555;
+#name{
+  font-size: 1.8rem;
+  font-weight: 100;
+  color: black;
 }
 
-#name {
-  font-size:3.5rem;
-  font-weight: 600;
-  color: #2c5282;
-  line-height:1.1;
-  margin: 0;
-}
 
-#description {
-  font-size:1.1rem;
-  color:#555;
-  margin-top:1 rem;
-}
+/* interests section */
 
 .interests{
   display:flex;
@@ -286,4 +305,14 @@ a:hover {
     .blog-post h2 {
         font-size: 1.75rem;
     }
+}
+
+@media (min-width: 600px) {
+  .intro {
+    flex-direction: row;
+  }
+
+  .rightintro, .leftintro {
+    flex: 1; 
+  }
 }
