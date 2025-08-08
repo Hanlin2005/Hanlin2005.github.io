@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <Title> Hanlin's Projects </title>
-    <link rel = "stylesheet" href = "./style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanlin's Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-
+    <link rel = "stylesheet" href = "./style.css">
+</head>
+<body>
 
   <header class = "header">
     <nav class = "headbar">
@@ -19,22 +22,31 @@
     </nav>
    </header>
 
+    <main>
+        <h1 class="page-title">My Projects</h1>
 
-    <div class = "projects">
+        <div class="projects-container">
 
-      <div id = "projectone">
-        <img src = "https://media.wired.com/photos/6261eae7536da34b19a67ad2/master/pass/Autel-Evo-Lite+-Drone-Gear.jpg" alt = "drone">
-        <h4>Drone</h4>
-        <p>DIY Arduino-based drone</p>
-      </div>
 
-      <div id = "projecttwo">
-            <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0aEtFPuhbxhhO4_aNYrWE5ezkSJ7Kyng92lz-tln-qw&s" alt = "drone">
-        <h4>Solar Dryer</h4>
-        <p>Solar dryer for Duke Campus Farm</p>
-      </div>
-    </div>
+            <a href="#" class="project-card">
+                <img src="https://images.unsplash.com/photo-1507563818895-135371a5b935?q=80&w=2070&auto=format&fit=crop" alt="A DIY drone on a wooden table.">
+                <div class="project-card-content">
+                    <h4>DIY Arduino Drone</h4>
+                    <p>An autonomous quadcopter built from scratch.</p>
+                </div>
+            </a>
 
-    
-  </body>
+            <!-- PROJECT CARD 2 -->
+            <a href="#" class="project-card">
+                <img src="https://images.unsplash.com/photo-1620813421832-4876a4a84464?q=80&w=1974&auto=format&fit=crop" alt="Sun-dried tomatoes in a wooden box.">
+                <div class="project-card-content">
+                    <h4>Solar Food Dryer</h4>
+                    <p>A sustainable solution for preserving produce.</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+</body>
 </html>
