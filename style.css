@@ -182,6 +182,26 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+
+/* Project page */
+
+.projects div{
+  border: 2px solid gray;
+  border-radius: 5px;
+  width: 250px;
+  height:300px;
+  display:inline-block;
+  box-shadow:2px 3px 7px 0px rgba(0,0,0,0.35);
+  background-color: #2EBFBD;
+  color: white;
+  vertical-align:top;
+  margin-top: 20px;
+}
+.projects h4{
+  text-align: center;
+}
+
+
 /* --- Responsive Design for Mobile --- */
 @media (max-width: 768px) {
     .headbar {
