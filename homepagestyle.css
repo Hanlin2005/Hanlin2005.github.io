@@ -6,6 +6,7 @@ html{
 body {
   background-color: #f0f0f0;
   padding-top: 60px;
+  color: #2d3748;
 }
 
 *, *:before, *:after{
@@ -20,14 +21,11 @@ img{
   display:block;
 }
 
-p {
-  font-family: sans-serif;
-  font-size: 1rem;
-  color: darkblue;
+.intro p, .interests p {
   line-height:1.5;
   margin:1rem;
 }
-
+/* Header Stuff*/
 .header{
   left: 0;
   right: 0;
@@ -139,4 +137,60 @@ a:hover {
 #interests_image img{
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+
+/* --- Blog Specific Styles --- */
+.blog-container {
+    max-width: 800px; /* Optimal width for reading */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.blog-container h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #2c5282;
+}
+
+.blog-post {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.blog-post h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.blog-post .post-meta {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post .post-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    .headbar {
+        text-align: center;
+    }
+    .blog-container h1 {
+        font-size: 2.5rem;
+    }
+    .blog-post h2 {
+        font-size: 1.75rem;
+    }
 }
