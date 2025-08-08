@@ -61,7 +61,6 @@ img{
 a{
   color: #333;
   font-weight: 500;
-  padding: 10px 15px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -86,14 +85,13 @@ a:hover {
 .leftintro{
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 20px;
 }
 
 #contactinfo{
-  display: flex;
-  flex-direction: row;
-  margin-top: 50px;
+  background-color: #e2e8f0;
+  border-radius: 20px;
+  align-self: center;
 }
 
 #contactinfo a{
@@ -106,6 +104,10 @@ a:hover {
   width: 50px;
   height: 50px;
   margin: 5px;
+}
+
+#title{
+  text-align: center;
 }
 
 #description{
@@ -163,15 +165,16 @@ a:hover {
 }
 
 .resources_text p{
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .resources_text a{
   color: darkblue;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1.4rem;
 }
 
 .resources_text a:hover{
@@ -180,6 +183,7 @@ a:hover {
 
 .resources_text li{
   line-height:1.6;
+  font-size:1.2rem;
 }
 
 .interests p{
@@ -213,13 +217,13 @@ a:hover {
 
 
 /* --- Blog Specific Styles --- */
-.blog-container {
+.blogcontainer {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-.blog-container h1 {
+.blogcontainer h1 {
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 40px;
@@ -227,7 +231,12 @@ a:hover {
     color: #2c5282;
 }
 
-.blog-post {
+.blogpost:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.blogpost {
     background-color: white;
     border-radius: 8px;
     padding: 30px;
@@ -235,19 +244,19 @@ a:hover {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.blog-post h2 {
+.blogpost h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
-.blog-post .post-meta {
+.blogpost .post-meta {
     font-size: 0.9rem;
     color: #718096;
     margin-bottom: 1.5rem;
 }
 
-.blog-post .post-content p {
+.blogpost .post-content p {
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1rem;
@@ -286,6 +295,12 @@ a:hover {
   object-fit: cover;
 }
 
+.projectcard video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
 .cardcontent {
   padding: 20px;
 }
@@ -307,8 +322,61 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+.projects a {
+  padding: 10px 15px;
+}
+
+.tag{
+  margin-top:10px;
+}
 
 
+
+/* Blog Page */
+.blogpage{
+  display: flex;
+  flex-direction: row;
+  margin:none;
+}
+.leftblogpanel{
+  flex: 0.5;
+}
+.rightblogpanel{
+  flex: 0.5;
+}
+.blog{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.blogtitle{
+  font-size:3rem;
+  margin-bottom: 20px;
+}
+
+.blogdate{
+  font-size: 1.2rem;
+  color: #718096
+}
+
+.blogparagraphs{
+  margin-top: 30px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.blogparagraphs p{
+  margin-bottom: 30px;
+}
+
+.blogimage{
+  width:60%;
+  margin-bottom: 30px;
+  text-align: center;
+}
 
 
 
@@ -332,6 +400,12 @@ a:hover {
     }
     #title{
       text-align:center;
+    }
+    .leftblogpanel, .rightblogpanel {
+      flex: 0;
+    }
+    .blogimage{
+      width: 90%;
     }
 }
 
