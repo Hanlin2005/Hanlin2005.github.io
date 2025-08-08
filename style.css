@@ -319,12 +319,19 @@ a:hover {
     }
     .headbar a{
       font-size: 1rem;
+      padding: 10px 10px;
     }
     .blog-container h1 {
         font-size: 2.5rem;
     }
     .blog-post h2 {
         font-size: 1.75rem;
+    }
+    #emailthing{
+      margin-right: 25px;
+    }
+    #title{
+      text-align:center;
     }
 }
 
