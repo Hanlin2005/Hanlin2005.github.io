@@ -317,6 +317,9 @@ a:hover {
     .headbar {
         text-align: center;
     }
+    .headbar a{
+      font-size: 1rem;
+    }
     .blog-container h1 {
         font-size: 2.5rem;
     }
