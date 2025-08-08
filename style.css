@@ -46,16 +46,25 @@ img{
   margin: 0px;
   padding:15px 30px;
   margin-left: 0 px;
-  text-align: right;
+  text-align: center;
+}
+
+.headbar a{
+  color: #333;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
   
-  a{
-    color: #333;
-    font-weight: 500;
-    padding: 10px 15px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
+a{
+  color: #333;
+  font-weight: 500;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
   
 a:hover {
     color: #c5cae9;
@@ -84,16 +93,22 @@ a:hover {
 #contactinfo{
   display: flex;
   flex-direction: row;
+  margin-top: 50px;
+}
+
+#contactinfo a{
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #linkedinlogo, #githublogo, #emailicon{
   width: 50px;
   height: 50px;
   margin: 5px;
-  margin-top: 50px;
 }
+
 #description{
-  text-align: left;
   font-size: 1.8rem;
 }
 #education{
@@ -129,9 +144,8 @@ a:hover {
   display:flex;
   background-color: #e2e8f0;
   padding: 60px 40px;
-  border-radius: 8px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #linkstitle{
@@ -140,10 +154,32 @@ a:hover {
 }
 
 .resources_text{
-  flex: 1.5;
-  display:inline-block;
+  flex: 1;
   vertical-align:top;
-  padding: 0 20px;
+  padding: 30px 30px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.resources_text p{
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.resources_text a{
+  color: darkblue;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resources_text a:hover{
+  text-decoration: underline;
+}
+
+.resources_text li{
+  line-height:1.6;
 }
 
 .interests p{
@@ -153,6 +189,10 @@ a:hover {
 
 .interests h1{
   padding-top: 5%;
+}
+
+#linkstitle{
+  text-align:center;
 }
 
 .interests_text{
@@ -174,7 +214,7 @@ a:hover {
 
 /* --- Blog Specific Styles --- */
 .blog-container {
-    max-width: 800px; /* Optimal width for reading */
+    max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
 }
@@ -216,89 +256,55 @@ a:hover {
 
 /* Project page */
 
-.projects div{
-  border: 2px solid gray;
-  border-radius: 5px;
-  width: 250px;
-  height:300px;
-  display:inline-block;
-  box-shadow:2px 3px 7px 0px rgba(0,0,0,0.35);
-  background-color: #2EBFBD;
-  color: white;
-  vertical-align:top;
-  margin-top: 20px;
-}
-.projects h4{
-  text-align: center;
-}
-
-/* Project page style */
-
-:root {
-  --primary-bg: #f0f2f5;
-  --card-bg: #ffffff;
-  --text-primary: #1a202c;
-  --text-secondary: #4a5568;
-  --header-bg: rgba(255, 255, 255, 0.8);
-  --border-color: #e2e8f0;
-  --accent-color: #4299e1;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-.page-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--text-primary);
-  margin: 40px 0;
-}
-
-.projects-container {
+.projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 30px 60px;
+  padding: 30px 30px 60px;
+  
 }
 
-.project-card {
-  background-color: var(--card-bg);
+.projectcard {
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: block;
-  color: inherit;
-  text-decoration: none;
 }
 
-.project-card:hover {
+.projectcard:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.project-card img {
+.projectcard img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.project-card-content {
+.cardcontent {
   padding: 20px;
 }
 
-.project-card h4 {
+.projectcard h4 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 8px;
-  color: var(--text-primary);
 }
 
-.project-card p {
+.projectcard p {
   font-size: 1rem;
-  color: var(--text-secondary);
   line-height: 1.5;
+}
+
+.projects .post-meta {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
 }
 
 
@@ -319,7 +325,7 @@ a:hover {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1000px) {
   .intro {
     flex-direction: row;
   }
