@@ -5,7 +5,7 @@ html{
 }
 body {
   background-color: #f0f0f0;
-  padding-top: 60px;
+  padding-top: 30px;
   color: #2d3748;
 }
 
@@ -103,7 +103,7 @@ a:hover {
 #linkedinlogo, #githublogo, #emailicon{
   width: 50px;
   height: 50px;
-  margin: 5px;
+  margin: 10px;
 }
 
 #title{
@@ -116,25 +116,26 @@ a:hover {
 #education{
   text-align: center;
   font-size: 1.2rem;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 #headshot{
   display: flex;
   align-items: center;
   justify-content: center;
-  width:80%;
-  padding: 30px;
+  width:60%;
+  padding: 10px;
   border-radius: 20%;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   margin-top: 50px;
+  overflow: hidden;
 }
 #headshot img{
   border-radius: 20%;
 }
 
 #name{
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 100;
   color: black;
 }
@@ -220,7 +221,7 @@ a:hover {
 .blogcontainer {
     max-width: 800px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 30px 20px;
 }
 
 .blogcontainer h1 {
@@ -271,7 +272,7 @@ a:hover {
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 30px 60px;
+  padding: 60px 30px 60px;
   
 }
 
@@ -406,6 +407,15 @@ a:hover {
     }
     .blogimage{
       width: 90%;
+    }
+    body{
+      padding-top: 50px;
+    }
+    #headshot{
+      width: 80%;
+    }
+    #name{
+      font-size: 1rem;
     }
 }
 
