@@ -339,6 +339,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   margin:none;
+  margin-top: 10px;
 }
 .leftblogpanel{
   flex: 0.5;

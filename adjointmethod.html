@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Adjoint Method</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "./style.css">
+</head>
+<body>
+
+  <header class = "header">
+    <nav class = "headbar">
+      <u1>
+        <a href = "./index.html"> ABOUT ME</a>
+        <a href = "./projects.html"> PROJECTS</a>
+        <a href = "./blogs.html"> BLOG</a>
+      </u1>
+    </nav>
+   </header>
+   <div class = "blogpage">
+
+    <div class = "leftblogpanel">
+    </div>
+
+        <div class="blog">
+            <h1 class="blogtitle">The Adjoint Method</h1>
+            <p class = "blogdate">
+                Published August 22, 2025
+            </p>
+
+            
+            <div class = "blogparagraphs">
+                <p>
+In this short entry I want to explain the adjoint method as my way of learning the concept and applying it to solve the minimization problem posed by a differentiable simulation optimization problem.
+                </p>
+
+                <p>
+                    We start with understanding the Lagrange multiplier.
+
+Imagine the contours of two functions, f(x,y) = c and g(x,y) = 0. As we vary c, which is the value of the function we are trying to optimize, as long as the contour of f(x,y) is intersecting that of g(x,y), there exists x and y which satisfy both f and g. Now, we notice that c is minimized on the boundary of where these two contours intersect. Bingo! This gives us the idea that we should select the point of intersection.
+
+                </p>
+
+                <p>
+                    Now, the gradients being multiples of each other make sure that the tangent vectors (or normal vectors) are the same. Thus, we derive our Lagrange multipliers.
+                </p>
+
+                <p>
+                    Now, I want to shift the topic to the lagrangian. Although not fundamentally required to understand Adjoint method, I would love to show it due to my particular interest in physics class (classical mechanics was one of my favorite classes last semester).
+
+For the lagrangian, we are trying to find a path that minimizes the action, that is the integral of the change in potential and kinetic energy.
+
+                </p>
+
+                
+            </div>
+            
+
+            <div class = "blogimage">
+
+            </div>
+
+
+        </div>
+        
+        <div class = "rightblogpanel">
+        </div>
+    
+   </div>
+
+</body>
+</html>
