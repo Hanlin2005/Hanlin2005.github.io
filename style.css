@@ -431,7 +431,11 @@ a:hover {
     flex-direction: row;
   }
 
-  .rightintro, .leftintro {
+  .rightintro {
     flex: 1; 
+  }
+
+  .leftintro {
+    flex: 1.5; 
   }
 }
