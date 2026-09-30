@@ -80,19 +80,7 @@
         <div class="lifecards">
           <article class="lifecard">
             <div class="hobbyframe">
-            <div class="hobbyphotos">
               <img src="./about/hiking/riverbed.jpeg" alt="Hanlin standing in a rocky riverbed in Alaska">
-              <img src="./about/hiking/grand-canyon.jpeg" alt="Hanlin sitting on the rim of the Grand Canyon">
-              <img src="./about/hiking/alpine-lake.jpeg" alt="Hanlin beside an alpine lake">
-              <img src="./about/hiking/andes-lake.jpeg" alt="Hanlin beside a glacial mountain lake">
-              <img src="./about/hiking/half-dome.jpeg" alt="Hanlin sitting on a granite ledge above Half Dome">
-              <img src="./about/hiking/yosemite-overlook.jpeg" alt="Hanlin on a Yosemite overlook">
-              <img src="./about/hiking/yosemite-dusk.jpeg" alt="Hanlin on a Yosemite cliff at dusk">
-              <img src="./about/hiking/yosemite-valley.jpeg" alt="Hanlin in Yosemite Valley">
-              <img src="./about/hiking/glacier.jpeg" alt="A glacier above a boat">
-              <img src="./about/hiking/moose.jpeg" alt="A moose lying in the grass">
-              <img src="./about/hiking/bear.jpeg" alt="A brown bear on a trail">
-            </div>
             <button class="photoswitch photoswitch-prev" type="button" aria-label="Previous photo">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M14 6l-6 6 6 6"/></svg>
             </button>
@@ -102,7 +90,7 @@
             </div>
             <div class="hobbycopy">
               <h2>Hiking</h2>
-              <p>I hike when I can get onto a trail. It is the easiest way I know to spend a day outside, away from a screen.</p>
+              <p>I have loved nature since a young age. I love the feeling of being in the wilderness and away from the bustling city, and I especially love the feeling of being free in the wild. For this reason, I enjoy road trips and hiking. One day, I would love to hitchhike across the world!</p>
             </div>
           </article>
           <article class="lifecard">
@@ -202,23 +190,28 @@
       (function () {
         var frame = document.querySelector(".hobbyframe");
         if (!frame) return;
-        var scroller = frame.querySelector(".hobbyphotos");
-        function step(direction) {
-          var imgs = Array.prototype.slice.call(scroller.querySelectorAll("img"));
-          if (!imgs.length) return;
-          var origin = scroller.getBoundingClientRect().left;
-          var current = 0;
-          for (var i = 0; i < imgs.length; i++) {
-            if (imgs[i].getBoundingClientRect().left - origin <= 8) current = i;
-          }
-          var next = current + direction;
-          if (next < 0) next = imgs.length - 1;
-          if (next >= imgs.length) next = 0;
-          var left = imgs[next].getBoundingClientRect().left - origin + scroller.scrollLeft;
-          scroller.scrollTo({ left: left, behavior: "auto" });
+        var img = frame.querySelector("img");
+        var photos = [
+          ["./about/hiking/riverbed.jpeg", "Hanlin standing in a rocky riverbed in Alaska"],
+          ["./about/hiking/grand-canyon.jpeg", "Hanlin sitting on the rim of the Grand Canyon"],
+          ["./about/hiking/alpine-lake.jpeg", "Hanlin beside an alpine lake"],
+          ["./about/hiking/andes-lake.jpeg", "Hanlin beside a glacial mountain lake"],
+          ["./about/hiking/half-dome.jpeg", "Hanlin sitting on a granite ledge above Half Dome"],
+          ["./about/hiking/yosemite-overlook.jpeg", "Hanlin on a Yosemite overlook"],
+          ["./about/hiking/yosemite-dusk.jpeg", "Hanlin on a Yosemite cliff at dusk"],
+          ["./about/hiking/yosemite-valley.jpeg", "Hanlin in Yosemite Valley"],
+          ["./about/hiking/glacier.jpeg", "A glacier above a boat"],
+          ["./about/hiking/moose.jpeg", "A moose lying in the grass"],
+          ["./about/hiking/bear.jpeg", "A brown bear on a trail"]
+        ];
+        var index = 0;
+        function show(next) {
+          index = (next + photos.length) % photos.length;
+          img.src = photos[index][0];
+          img.alt = photos[index][1];
         }
-        frame.querySelector(".photoswitch-prev").addEventListener("click", function () { step(-1); });
-        frame.querySelector(".photoswitch-next").addEventListener("click", function () { step(1); });
+        frame.querySelector(".photoswitch-prev").addEventListener("click", function () { show(index - 1); });
+        frame.querySelector(".photoswitch-next").addEventListener("click", function () { show(index + 1); });
       })();
     </script>
   </body>

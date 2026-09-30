@@ -129,7 +129,7 @@ img{
 }
 .headbar {
   margin: 0px;
-  padding: clamp(18px, 2vw, 28px) clamp(84px, 9vw, 120px);
+  padding: clamp(18px, 2vw, 28px) calc(clamp(12px, 1.6vw, 22px) + clamp(44px, 4.6vw, 58px) + 84px) clamp(18px, 2vw, 28px) clamp(24px, 4vw, 48px);
   margin-left: 0 px;
   text-align: center;
 }
@@ -243,11 +243,58 @@ a:hover {
 }
 
 .exprole {
-  margin-bottom: 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.experienceinner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.explogo {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: 2px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 0;
+}
+
+.explogo img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(420px, 46vw);
+  max-height: 72px;
+  object-fit: contain;
+}
+
+.explogo-liberata {
+  background: #050599;
+}
+
+.explogo-lenovo {
+  background: #e1140a;
+  padding: 0;
+}
+
+.expbody {
+  flex: 1;
+  min-width: 0;
 }
 
 .exprole h2 {
   font-size: 1.25rem;
+  margin: 0 0 2px;
 }
 
 .expmeta {
@@ -305,9 +352,6 @@ a:hover {
 #description p{
   margin-top: 0;
   margin-bottom: 2rem;
-}
-#description p:last-child{
-  margin-bottom: 0;
 }
 #education{
   text-align: center;
@@ -463,20 +507,15 @@ a:hover {
   min-width: 0;
 }
 
-.hobbyphotos {
-  display: flex;
-  gap: 12px;
+.hobbyphotos,
+.hobbyframe > img {
   width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  border-radius: 12px;
-  padding-bottom: 10px;
-  -webkit-overflow-scrolling: touch;
+  display: block;
 }
 
 .photoswitch {
   position: absolute;
-  top: calc(50% - 8px);
+  top: 50%;
   transform: translateY(-50%);
   width: 42px;
   height: 42px;
@@ -488,13 +527,8 @@ a:hover {
   display: grid;
   place-items: center;
   cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
-
-.hobbyframe:hover .photoswitch,
-.hobbyframe:focus-within .photoswitch {
   opacity: 1;
+  z-index: 2;
 }
 
 .photoswitch-prev {
@@ -502,7 +536,7 @@ a:hover {
 }
 
 .photoswitch-next {
-  right: calc(14% + 16px);
+  right: 12px;
 }
 
 .photoswitch svg {
@@ -515,34 +549,13 @@ a:hover {
   border-color: var(--link-hover);
 }
 
-@media (hover: none) {
-  .photoswitch {
-    opacity: 1;
-  }
-}
-
-.hobbyphotos::-webkit-scrollbar {
-  height: 8px;
-}
-
-.hobbyphotos::-webkit-scrollbar-thumb {
-  background: var(--text-muted);
-  border-radius: 999px;
-}
-
-.hobbyphotos img {
-  flex: 0 0 86%;
-  width: 86%;
+.hobbyphotos img,
+.hobbyframe > img {
+  width: 100%;
   height: 280px;
   object-fit: cover;
-  scroll-snap-align: start;
   border-radius: 12px;
   background-color: var(--photo-bg);
-}
-
-.hobbyphotos img:only-child {
-  flex-basis: 100%;
-  width: 100%;
 }
 
 .lifecard h2 {
@@ -569,17 +582,18 @@ a:hover {
     min-width: 0;
   }
 
-  .hobbyphotos img {
+  .hobbyphotos img,
+  .hobbyframe > img {
     height: 380px;
   }
 }
 
 .totop {
   position: fixed;
-  right: clamp(12px, 1.6vw, 22px);
-  bottom: 22px;
-  width: 48px;
-  height: 48px;
+  top: clamp(12px, 1.5vw, 18px);
+  right: calc(clamp(12px, 1.6vw, 22px) + clamp(44px, 4.6vw, 58px) + 10px);
+  width: 58px;
+  height: 58px;
   padding: 0;
   border: 1px solid var(--toggle-border);
   border-radius: 999px;
@@ -588,11 +602,11 @@ a:hover {
   display: grid;
   place-items: center;
   cursor: pointer;
-  z-index: 1000;
+  touch-action: manipulation;
+  z-index: 1001;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .totop.visible {
@@ -602,8 +616,9 @@ a:hover {
 }
 
 .totop svg {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
 }
 
 .totop:hover {
@@ -908,6 +923,19 @@ a:hover {
       margin-top: 32px;
       padding: 32px 16px 20px;
     }
+    .explogo img {
+      max-width: min(168px, 42vw);
+      max-height: 48px;
+    }
+    .totop {
+      top: 74px;
+      right: 10px;
+      width: 52px;
+      height: 52px;
+    }
+    .exprole {
+      gap: 12px;
+    }
     .homework {
       padding: 32px 16px 40px;
     }
@@ -924,11 +952,44 @@ a:hover {
     #name{
       font-size: 1rem;
     }
-    #linkedinlogo, #githublogo, #emailicon{
-      width: 50px;
-      height: 50px;
-      margin: 5px;
+    #description,
+    #education,
+    .lifeintro,
+    .lifecard p,
+    .exprole p,
+    .resources_text p,
+    .resources_text li,
+    .resources_text a,
+    .blogparagraphs {
+      font-size: 1rem;
     }
+    #title h1,
+    #description p,
+    .blogparagraphs p {
+      margin-bottom: 1.5rem;
+    }
+    .resources_text p {
+      margin-bottom: 1rem;
+    }
+    #contactinfo {
+      font-size: 0.85rem;
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+    }
+    #headshot {
+      margin-top: 0.75rem;
+    }
+    #linkedinlogo, #githublogo, #emailicon{
+      width: 32px;
+      height: 32px;
+      margin: 4px;
+    }
+}
+
+@media (max-width: 999px) {
+  #description {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 1000px) {
