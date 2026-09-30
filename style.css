@@ -255,15 +255,15 @@ a:hover {
 }
 
 .explogo {
-  flex: 0 0 auto;
-  width: auto;
-  height: auto;
+  flex: 0 0 84px;
+  width: 84px;
+  height: 84px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   margin-top: 2px;
-  padding: 0;
+  padding: 6px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 0;
@@ -271,10 +271,10 @@ a:hover {
 
 .explogo img {
   display: block;
-  width: auto;
-  height: auto;
-  max-width: min(420px, 46vw);
-  max-height: 72px;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
 }
 
@@ -923,9 +923,11 @@ a:hover {
       margin-top: 32px;
       padding: 32px 16px 20px;
     }
-    .explogo img {
-      max-width: min(168px, 42vw);
-      max-height: 48px;
+    .explogo {
+      flex-basis: 64px;
+      width: 64px;
+      height: 64px;
+      padding: 4px;
     }
     .totop {
       top: 74px;
