@@ -76,21 +76,43 @@
 
       <section class="life">
         <div class="lifeinner">
-        <h1>Off Campus</h1>
+        <h1>Hobbies</h1>
         <div class="lifecards">
           <article class="lifecard">
-            <div class="hobbyphoto">
-              <img src="./about/hiking.jpg" alt="Hanlin on a hike" onerror="this.style.display='none'">
+            <div class="hobbyframe">
+            <div class="hobbyphotos">
+              <img src="./about/hiking/riverbed.jpeg" alt="Hanlin standing in a rocky riverbed in Alaska">
+              <img src="./about/hiking/grand-canyon.jpeg" alt="Hanlin sitting on the rim of the Grand Canyon">
+              <img src="./about/hiking/alpine-lake.jpeg" alt="Hanlin beside an alpine lake">
+              <img src="./about/hiking/andes-lake.jpeg" alt="Hanlin beside a glacial mountain lake">
+              <img src="./about/hiking/half-dome.jpeg" alt="Hanlin sitting on a granite ledge above Half Dome">
+              <img src="./about/hiking/yosemite-overlook.jpeg" alt="Hanlin on a Yosemite overlook">
+              <img src="./about/hiking/yosemite-dusk.jpeg" alt="Hanlin on a Yosemite cliff at dusk">
+              <img src="./about/hiking/yosemite-valley.jpeg" alt="Hanlin in Yosemite Valley">
+              <img src="./about/hiking/glacier.jpeg" alt="A glacier above a boat">
+              <img src="./about/hiking/moose.jpeg" alt="A moose lying in the grass">
+              <img src="./about/hiking/bear.jpeg" alt="A brown bear on a trail">
             </div>
-            <h2>Hiking</h2>
-            <p>I hike when I can get onto a trail. It is the easiest way I know to spend a day outside, away from a screen.</p>
+            <button class="photoswitch photoswitch-prev" type="button" aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M14 6l-6 6 6 6"/></svg>
+            </button>
+            <button class="photoswitch photoswitch-next" type="button" aria-label="Next photo">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M10 6l6 6-6 6"/></svg>
+            </button>
+            </div>
+            <div class="hobbycopy">
+              <h2>Hiking</h2>
+              <p>I hike when I can get onto a trail. It is the easiest way I know to spend a day outside, away from a screen.</p>
+            </div>
           </article>
           <article class="lifecard">
-            <div class="hobbyphoto">
-              <img src="./about/scuba.jpg" alt="Hanlin scuba diving" onerror="this.style.display='none'">
+            <div class="hobbyphotos">
+              <img src="./about/scuba/dock.jpeg" alt="Hanlin with a scuba group on a dock">
             </div>
-            <h2>Scuba diving</h2>
-            <p>This summer, I fell in love with scuba diving. As some people put it, we're born too late to explore the earth, born too early to explore the universe. However, we're just in time to explore the secrets of the ocean. Scuba diving satisfies this sense of adventure and exploration. In fact, scuba diving was only invented in the 1940s. It's a completely different world underwater, and I am deeply fascinated by it.</p>
+            <div class="hobbycopy">
+              <h2>Scuba diving</h2>
+              <p>This summer, I fell in love with scuba diving. As some people put it, we're born too late to explore the earth, born too early to explore the universe. However, we're just in time to explore the secrets of the ocean. Scuba diving satisfies this sense of adventure and exploration. In fact, scuba diving was only invented in the 1940s. It's a completely different world underwater, and I am deeply fascinated by it.</p>
+            </div>
           </article>
         </div>
         </div>
@@ -176,5 +198,28 @@
         </div>
       </div>
     </div>
+    <script>
+      (function () {
+        var frame = document.querySelector(".hobbyframe");
+        if (!frame) return;
+        var scroller = frame.querySelector(".hobbyphotos");
+        function step(direction) {
+          var imgs = Array.prototype.slice.call(scroller.querySelectorAll("img"));
+          if (!imgs.length) return;
+          var origin = scroller.getBoundingClientRect().left;
+          var current = 0;
+          for (var i = 0; i < imgs.length; i++) {
+            if (imgs[i].getBoundingClientRect().left - origin <= 8) current = i;
+          }
+          var next = current + direction;
+          if (next < 0) next = imgs.length - 1;
+          if (next >= imgs.length) next = 0;
+          var left = imgs[next].getBoundingClientRect().left - origin + scroller.scrollLeft;
+          scroller.scrollTo({ left: left, behavior: "auto" });
+        }
+        frame.querySelector(".photoswitch-prev").addEventListener("click", function () { step(-1); });
+        frame.querySelector(".photoswitch-next").addEventListener("click", function () { step(1); });
+      })();
+    </script>
   </body>
 </html>

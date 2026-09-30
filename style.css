@@ -295,9 +295,19 @@ a:hover {
 #title{
   text-align: center;
 }
+#title h1{
+  margin-bottom: 2rem;
+}
 
 #description{
   font-size: 1.8rem;
+}
+#description p{
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+#description p:last-child{
+  margin-bottom: 0;
 }
 #education{
   text-align: center;
@@ -437,37 +447,168 @@ a:hover {
 .lifecards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 56px;
-  max-width: 640px;
+  gap: 64px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .lifecard {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
-.hobbyphoto {
-  aspect-ratio: 3 / 2;
-  background-color: var(--photo-bg);
-  border-radius: 12px;
-  overflow: hidden;
+.hobbyframe {
+  position: relative;
+  min-width: 0;
 }
 
-.hobbyphoto img {
+.hobbyphotos {
+  display: flex;
+  gap: 12px;
   width: 100%;
-  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  border-radius: 12px;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.photoswitch {
+  position: absolute;
+  top: calc(50% - 8px);
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--toggle-border);
+  border-radius: 999px;
+  background: var(--toggle-bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.hobbyframe:hover .photoswitch,
+.hobbyframe:focus-within .photoswitch {
+  opacity: 1;
+}
+
+.photoswitch-prev {
+  left: 12px;
+}
+
+.photoswitch-next {
+  right: calc(14% + 16px);
+}
+
+.photoswitch svg {
+  width: 18px;
+  height: 18px;
+}
+
+.photoswitch:hover {
+  color: var(--link-hover);
+  border-color: var(--link-hover);
+}
+
+@media (hover: none) {
+  .photoswitch {
+    opacity: 1;
+  }
+}
+
+.hobbyphotos::-webkit-scrollbar {
+  height: 8px;
+}
+
+.hobbyphotos::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 999px;
+}
+
+.hobbyphotos img {
+  flex: 0 0 86%;
+  width: 86%;
+  height: 280px;
   object-fit: cover;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  background-color: var(--photo-bg);
+}
+
+.hobbyphotos img:only-child {
+  flex-basis: 100%;
+  width: 100%;
 }
 
 .lifecard h2 {
   font-size: 1.5rem;
-  margin: 16px 0 8px;
+  margin: 0 0 8px;
 }
 
 .lifecard p {
   font-size: 1.05rem;
   line-height: 1.6;
+}
+
+@media (min-width: 900px) {
+  .lifecard {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .hobbyframe,
+  .lifecard > .hobbyphotos,
+  .hobbycopy {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hobbyphotos img {
+    height: 380px;
+  }
+}
+
+.totop {
+  position: fixed;
+  right: clamp(12px, 1.6vw, 22px);
+  bottom: 22px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--toggle-border);
+  border-radius: 999px;
+  background: var(--toggle-bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.totop.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.totop svg {
+  width: 22px;
+  height: 22px;
+}
+
+.totop:hover {
+  color: var(--link-hover);
+  border-color: var(--link-hover);
 }
 
 /* interests section */
