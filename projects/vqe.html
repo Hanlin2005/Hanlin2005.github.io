@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>JuliaChess</title>
+    <title>Variational Quantum Eigensolver</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -33,27 +33,18 @@
 
     <div class="blog">
       <p class="blogdate"><a href="../projects.html">Projects</a></p>
-      <h1 class="blogtitle">JuliaChess</h1>
-      <p class="blogdate">Ongoing</p>
-      <p class="blogdate">Tools: Julia</p>
-
-      <div class="blogimage">
-        <img src="JuliaEngine.png" alt="A chess position from the Julia engine, with the d-file squares of the last move highlighted.">
-        <p>A position from the engine. The highlighted squares on the d-file mark the last move.</p>
-      </div>
+      <h1 class="blogtitle">Variational Quantum Eigensolver</h1>
+      <p class="blogdate">Tools: Python, Qiskit</p>
 
       <div class="blogparagraphs">
         <p>
-          I am writing a chess engine in Julia and playing it on Lichess. The board above is a position from that engine. A game on Lichess is the test I actually want: the program has to choose a move, send it, and keep doing that until the game ends.
+          I simulated ground-state estimation for Heisenberg models with IBM Qiskit, and compared a one-dimensional hardware layout with a two-dimensional one.
         </p>
         <p>
-          The work sits in three pieces. The board has to remember where every piece is. Move generation has to list only legal moves, including castling, en passant, and promotion. Search has to look ahead far enough to pick a move before the clock runs out.
+          A circuit that does not match the connectivity of the device has to insert SWAP gates. I modelled that gate error and found that the topological mismatch adds a clear amount of noise. Among the optimizers I tried, SPSA held up better than COBYLA once the circuit was noisy.
         </p>
         <p>
-          The search uses minimax and Monte Carlo tree search. The engine plays on Lichess through the Universal Chess Interface, and I benchmark search depth and heuristics under a time limit.
-        </p>
-        <p>
-          <a href="https://github.com/Hanlin2005/julia-chess">GitHub</a>
+          <a href="https://github.com/Hanlin2005/Analyzing-VQE-Geometry">GitHub</a>
         </p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>JuliaChess</title>
+    <title>Spoken Arabic Digit Recognition</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -33,27 +33,16 @@
 
     <div class="blog">
       <p class="blogdate"><a href="../projects.html">Projects</a></p>
-      <h1 class="blogtitle">JuliaChess</h1>
-      <p class="blogdate">Ongoing</p>
-      <p class="blogdate">Tools: Julia</p>
-
-      <div class="blogimage">
-        <img src="JuliaEngine.png" alt="A chess position from the Julia engine, with the d-file squares of the last move highlighted.">
-        <p>A position from the engine. The highlighted squares on the d-file mark the last move.</p>
-      </div>
+      <h1 class="blogtitle">Spoken Arabic Digit Recognition</h1>
+      <p class="blogdate">December 2024</p>
+      <p class="blogdate">Tools: Python, scikit-learn, SciPy</p>
 
       <div class="blogparagraphs">
         <p>
-          I am writing a chess engine in Julia and playing it on Lichess. The board above is a position from that engine. A game on Lichess is the test I actually want: the program has to choose a move, send it, and keep doing that until the game ends.
+          I classified spoken digits from 0 to 9 on the Spoken Arabic Digit dataset. Each utterance is represented by cepstral coefficients, and a Gaussian mixture model scores which digit those coefficients belong to.
         </p>
         <p>
-          The work sits in three pieces. The board has to remember where every piece is. Move generation has to list only legal moves, including castling, en passant, and promotion. Search has to look ahead far enough to pick a move before the clock runs out.
-        </p>
-        <p>
-          The search uses minimax and Monte Carlo tree search. The engine plays on Lichess through the Universal Chess Interface, and I benchmark search depth and heuristics under a time limit.
-        </p>
-        <p>
-          <a href="https://github.com/Hanlin2005/julia-chess">GitHub</a>
+          The mixture parameters come from maximum likelihood, with K-means and expectation-maximization as the fitting methods I compared. The best run reached 90.64% accuracy. The work is written up in a 20-page report.
         </p>
       </div>
     </div>
