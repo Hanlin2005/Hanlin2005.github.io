@@ -2,10 +2,11 @@ html{
   font-family: 'Inter', sans-serif;
   box-sizing:border-box;
   font-size: 16px;
+  --shadow-color: rgba(45, 55, 72, 0.2);
 }
 body {
   background-color: #f0f0f0;
-  padding-top: 30px;
+  padding-top: 112px;
   color: #2d3748;
 }
 
@@ -71,7 +72,7 @@ a{
 }
   
 a:hover {
-    color: #c5cae9;
+    color: #2c5282;
   }
 
 .intro{
@@ -147,6 +148,85 @@ a:hover {
 
 
 /* Outside the lab */
+
+.homework {
+  width: 100%;
+  margin-top: 0;
+  padding: 48px 30px 56px;
+  background-color: #e7eef6;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.homeworkinner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.homework h1 {
+  text-align: center;
+  margin: 36px 0 20px;
+}
+
+.homeworkinner > h1:first-child {
+  margin-top: 0;
+}
+
+.homepicks,
+.homeposts {
+  display: grid;
+  gap: 24px;
+}
+
+.homepicks {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.homeposts {
+  grid-template-columns: 1fr 1fr;
+}
+
+.homepost {
+  display: block;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.homepost:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.homepost h2 {
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.homepost .post-meta {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 10px;
+}
+
+.homepost p {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.homepicks .projectcard h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.homepicks .post-meta {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
 
 .life {
   width: 100%;
@@ -493,11 +573,14 @@ a:hover {
     .blogimage{
       width: 90%;
     }
-    body{
-      padding-top: 50px;
-    }
     #headshot{
       width: 80%;
+    }
+    .homework {
+      padding: 32px 16px 40px;
+    }
+    .homeposts {
+      grid-template-columns: 1fr;
     }
     .life {
       margin-top: 32px;

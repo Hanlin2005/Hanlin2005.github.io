@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <Title> Hanlin's Website </title>
+    <title>Hanlin's Website</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hanlin Wang is a Duke ECE and Physics student working on physical simulation, optimization, and robotics.">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -13,11 +15,11 @@
 
   <header class = "header">
     <nav class = "headbar">
-      <u1>
+      <ul>
         <a href = "./index.html"> ABOUT ME</a>
         <a href = "./projects.html"> PROJECTS</a>
         <a href = "./blogs.html"> BLOG</a>
-      </u1>
+      </ul>
     </nav>
   </header>
 
@@ -30,7 +32,7 @@
             <h1>Welcome to My Website!</h1>
           </div>
           <div id = "description">
-            <p>Hi! I'm a junior undergraduate at Duke University working in the General Robotics Lab.
+            <p>Hi! I'm a senior undergraduate at Duke University working in the General Robotics Lab.
             </p>
             <p>
             Recently, I have been interested in the field of physical simulation and optimization, which has various
@@ -90,6 +92,54 @@
         </div>
       </section>
 
+      <section class="homework">
+        <div class="homeworkinner">
+        <h1>Selected Projects</h1>
+        <div class="homepicks">
+          <a href="./projects/pinn-fluids.html" class="projectcard">
+            <img src="./projects/lidcavity.png" alt="Streamlines of a lid-driven cavity">
+            <div class="cardcontent">
+              <h2>Fluid Dynamics with PINNs</h2>
+              <p class="post-meta">Ongoing</p>
+              <p>Transfer learning of physics-informed networks for fluid mechanics.</p>
+            </div>
+          </a>
+          <a href="./projects/fractal-gripper.html" class="projectcard">
+            <video muted preload="metadata">
+              <source src="./projects/GripperAnimation.mp4#t=1" type="video/mp4">
+            </video>
+            <div class="cardcontent">
+              <h2>Fractal Robotic Gripper</h2>
+              <p class="post-meta">July 2025</p>
+              <p>A gripper modelled in Fusion and simulated in PyBullet.</p>
+            </div>
+          </a>
+          <a href="./projects/guided-recovery.html" class="projectcard">
+            <img src="./projects/recovery.png" alt="Exploded view of the guided recovery module">
+            <div class="cardcontent">
+              <h2>Guided Recovery System</h2>
+              <p class="post-meta">May 2024</p>
+              <p>The first guided recovery system at Duke AERO.</p>
+            </div>
+          </a>
+        </div>
+
+        <h1>Latest Writing</h1>
+        <div class="homeposts">
+          <a class="homepost" href="./blogs/adjointmethod.html">
+            <h2>The Adjoint Method</h2>
+            <p class="post-meta">August 22, 2025</p>
+            <p>How the adjoint method turns a differentiable simulation into an optimization problem.</p>
+          </a>
+          <a class="homepost" href="./blogs/openingnote.html">
+            <h2>An Opening Note</h2>
+            <p class="post-meta">August 8, 2025</p>
+            <p>Why this site exists, and what changed when research stopped feeling like a class requirement.</p>
+          </a>
+        </div>
+        </div>
+      </section>
+
       <div class = "resources">
         <div class = "resources_text">
           <h1 id = "linkstitle">Pointers to Interesting Reads</h1>
@@ -111,7 +161,9 @@
             <li><a href = "https://gurmeet.net/puzzles/">Some Algorithm Puzzles</a> - One of my favorite personal websites out there
             </li>
             <li><a href = "https://4gravitons.com/page/2/">4 gravitons</a> - Physics blog!
+            </li>
             <li><a href = "https://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">Computational Fluid Dynamics in Python</a> - A great resource for learning CFD
+            </li>
             <li><a href = "https://spinningup.openai.com/en/latest/">Spinning Up in Deep RL</a> - Resource for learning deep reinforcement learning
             </li>
             <li><a href = "https://donsmaps.com/index.html">Don's Maps</a> - Resources for European and Australian Archeology
