@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rube Goldberg Machine</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="headbar">
+      <ul>
+        <a href="../index.html"> ABOUT ME</a>
+        <a href="../projects.html"> PROJECTS</a>
+        <a href="../blogs.html"> BLOG</a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="blogpage">
+    <div class="leftblogpanel"></div>
+
+    <div class="blog">
+      <p class="blogdate"><a href="../projects.html">Projects</a></p>
+      <h1 class="blogtitle">Rube Goldberg Machine</h1>
+      <p class="blogdate">April 2024</p>
+      <p class="blogdate">Tools: Arduino, sensor integration, soldering, circuits</p>
+
+      <div class="blogimage">
+        <video muted controls>
+          <source src="../rubegoldberg.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>The machine running through its arcade-themed sequence.</p>
+      </div>
+
+      <div class="blogparagraphs">
+        <p>
+          I built an arcade-themed Rube Goldberg machine. The point of the machine is a long chain of small events, each one setting off the next, ending in one deliberate action. The video is that chain running.
+        </p>
+        <p>
+          The steps are tied together with circuits. Sensors notice when a piece arrives, and an Arduino decides what should move next. That meant soldering the boards, wiring the sensors into the Arduino, and placing each stage so the previous one could actually reach it.
+        </p>
+        <p>
+          Most of the work was making the handoff reliable. A stage that works once on the bench still has to work when the stage before it is a little late or a little off line. The machine was finished in April 2024.
+        </p>
+      </div>
+    </div>
+
+    <div class="rightblogpanel"></div>
+  </div>
+
+</body>
+</html>

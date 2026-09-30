@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fractal-Shaped Robotic Gripper</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="headbar">
+      <ul>
+        <a href="../index.html"> ABOUT ME</a>
+        <a href="../projects.html"> PROJECTS</a>
+        <a href="../blogs.html"> BLOG</a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="blogpage">
+    <div class="leftblogpanel"></div>
+
+    <div class="blog">
+      <p class="blogdate"><a href="../projects.html">Projects</a></p>
+      <h1 class="blogtitle">Fractal-Shaped Robotic Gripper in URDF</h1>
+      <p class="blogdate">July 2025</p>
+      <p class="blogdate">Tools: Fusion, PyBullet</p>
+
+      <div class="blogimage">
+        <video muted controls>
+          <source src="../GripperAnimation.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>PyBullet simulation of the gripper.</p>
+      </div>
+
+      <div class="blogparagraphs">
+        <p>
+          I modelled a fractal-shaped robotic gripper in Fusion and simulated it in PyBullet. The shape repeats at smaller scales, so the fingers can wrap around an object with more than one size of contact.
+        </p>
+        <p>
+          Fusion was the model. From there I exported a URDF, which lists the links, the joints, and the collision geometry. PyBullet reads that file and lets the joints move, which is the clip above. The simulation is where I could see the hand close before committing the design to hardware.
+        </p>
+        <p>
+          The project is the path from a CAD model to a robot description that a simulator will accept. July 2025 is when I had the gripper running in that loop.
+        </p>
+      </div>
+    </div>
+
+    <div class="rightblogpanel"></div>
+  </div>
+
+</body>
+</html>

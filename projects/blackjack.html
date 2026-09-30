@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blackjack Engine with Reinforcement Learning</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="headbar">
+      <ul>
+        <a href="../index.html"> ABOUT ME</a>
+        <a href="../projects.html"> PROJECTS</a>
+        <a href="../blogs.html"> BLOG</a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="blogpage">
+    <div class="leftblogpanel"></div>
+
+    <div class="blog">
+      <p class="blogdate"><a href="../projects.html">Projects</a></p>
+      <h1 class="blogtitle">Blackjack Engine with Reinforcement Learning</h1>
+      <p class="blogdate">April 2025</p>
+      <p class="blogdate">Tools: Python, PyTorch</p>
+
+      <div class="blogimage">
+        <img src="../blackjack.jpg" alt="Cumulative reward over 100,000 blackjack episodes for several card-counting methods and basic strategy.">
+        <p>Cumulative reward over 100,000 episodes. The curves are an empty count, Hi-Lo, Zen, Uston APC, Ten Count, a full count, and basic strategy.</p>
+      </div>
+
+      <div class="blogparagraphs">
+        <p>
+          I built a blackjack engine that learns a playing policy with deep Q-learning. The network uses a dueling architecture: one stream estimates the value of the position, and another estimates the advantage of each action. The two combine into the action values the agent trains on.
+        </p>
+        <p>
+          The figure is a separate comparison I ran on the same game. It tracks cumulative reward for several card-counting systems and for basic strategy across 100,000 episodes. Every curve loses money. Basic strategy loses it more slowly than the counting methods in this run, which is a useful check that the simulator is behaving like a casino shoe.
+        </p>
+        <p>
+          The engine is written in Python and PyTorch. April 2025 is when the dueling network and this comparison were both in place.
+        </p>
+      </div>
+    </div>
+
+    <div class="rightblogpanel"></div>
+  </div>
+
+</body>
+</html>

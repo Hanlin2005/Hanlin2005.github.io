@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fluid Dynamics with Physics-Informed Neural Networks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="headbar">
+      <ul>
+        <a href="../index.html"> ABOUT ME</a>
+        <a href="../projects.html"> PROJECTS</a>
+        <a href="../blogs.html"> BLOG</a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="blogpage">
+    <div class="leftblogpanel"></div>
+
+    <div class="blog">
+      <p class="blogdate"><a href="../projects.html">Projects</a></p>
+      <h1 class="blogtitle">Fluid Dynamics with Physics-Informed Neural Networks</h1>
+      <p class="blogdate">Ongoing</p>
+      <p class="blogdate">Tools: Python, PyTorch</p>
+
+      <div class="blogimage">
+        <img src="../lidcavity.png" alt="Streamlines of a lid-driven cavity, with one large recirculation and a smaller vortex in the lower-right corner.">
+        <p>Streamlines of a lid-driven cavity. The top wall moves, a large recirculation fills the box, and a smaller vortex sits in the lower-right corner.</p>
+      </div>
+
+      <div class="blogparagraphs">
+        <p>
+          I am studying how a physics-informed neural network trained on one fluid problem can be reused on another. The case in the figure is the lid-driven cavity: flow in a square box whose top wall slides. It is a small benchmark, and it already has the structure I care about, a primary vortex plus a weaker corner vortex.
+        </p>
+        <p>
+          A PINN represents the velocity and pressure with a neural network. Training asks that field to satisfy the Navier-Stokes equations and the boundary conditions of the problem. The result is tied to one geometry, one boundary condition, and one Reynolds number.
+        </p>
+        <p>
+          The project is about transfer. I want to know how much of a trained network still helps when one of those pieces changes, and what has to be learned again. The cavity is the case I am using while I work that out in Python and PyTorch.
+        </p>
+      </div>
+    </div>
+
+    <div class="rightblogpanel"></div>
+  </div>
+
+</body>
+</html>

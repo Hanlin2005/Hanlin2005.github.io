@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guided Recovery System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="headbar">
+      <ul>
+        <a href="../index.html"> ABOUT ME</a>
+        <a href="../projects.html"> PROJECTS</a>
+        <a href="../blogs.html"> BLOG</a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="blogpage">
+    <div class="leftblogpanel"></div>
+
+    <div class="blog">
+      <p class="blogdate"><a href="../projects.html">Projects</a></p>
+      <h1 class="blogtitle">Guided Recovery System</h1>
+      <p class="blogdate">May 2024</p>
+      <p class="blogdate">Tools: Arduino, Python, Simulink</p>
+
+      <div class="blogimage">
+        <img src="../recovery.png" alt="Exploded view of the guided recovery module, with a honeycomb body, servos, and end plates.">
+        <p>Exploded view of the recovery module: a honeycomb shell, servos, and the plates that tie it into the airframe.</p>
+      </div>
+
+      <div class="blogparagraphs">
+        <p>
+          I designed the first guided recovery system for Duke AERO. On the way down, the system steers the rocket toward a chosen landing area.
+        </p>
+        <p>
+          The figure is the mechanical module. A honeycomb shell holds the servos, and eye bolts on the end plates are the load path into the rest of the rocket. The left view is the stack along the axis. The right view is the same parts pulled apart.
+        </p>
+        <p>
+          Arduino ran the onboard control. Python covered the supporting software. Simulink was the model of the guidance loop, so the steering could be checked before it was trusted on hardware. The system was in place in May 2024.
+        </p>
+      </div>
+    </div>
+
+    <div class="rightblogpanel"></div>
+  </div>
+
+</body>
+</html>

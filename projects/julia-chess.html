@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JuliaChess</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="headbar">
+      <ul>
+        <a href="../index.html"> ABOUT ME</a>
+        <a href="../projects.html"> PROJECTS</a>
+        <a href="../blogs.html"> BLOG</a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="blogpage">
+    <div class="leftblogpanel"></div>
+
+    <div class="blog">
+      <p class="blogdate"><a href="../projects.html">Projects</a></p>
+      <h1 class="blogtitle">JuliaChess</h1>
+      <p class="blogdate">Ongoing</p>
+      <p class="blogdate">Tools: Julia</p>
+
+      <div class="blogimage">
+        <img src="../JuliaEngine.png" alt="A chess position from the Julia engine, with the d-file squares of the last move highlighted.">
+        <p>A position from the engine. The highlighted squares on the d-file mark the last move.</p>
+      </div>
+
+      <div class="blogparagraphs">
+        <p>
+          I am writing a chess engine in Julia and playing it on Lichess. The board above is a position from that engine. A game on Lichess is the test I actually want: the program has to choose a move, send it, and keep doing that until the game ends.
+        </p>
+        <p>
+          The work sits in three pieces. The board has to remember where every piece is. Move generation has to list only legal moves, including castling, en passant, and promotion. Search has to look ahead far enough to pick a move before the clock runs out.
+        </p>
+        <p>
+          Julia fits the search loop, which is a lot of small numerical work repeated millions of times. The project is ongoing. I am still building the engine up to the point where those Lichess games are worth studying.
+        </p>
+      </div>
+    </div>
+
+    <div class="rightblogpanel"></div>
+  </div>
+
+</body>
+</html>
