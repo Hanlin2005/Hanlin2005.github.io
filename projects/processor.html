@@ -38,10 +38,13 @@
 
       <div class="blogparagraphs">
         <p>
-          For ECE 350 I built a pipelined processor in Verilog. It has a register file, an ALU, a multiply-divide unit, and stall logic between the pipeline stages.
+          For ECE 350 I built a processor in Verilog, in four checkpoints. The ALU does add, subtract, AND, OR, logical shift left, and arithmetic shift right, and it reports not-equal, less-than, and overflow. The register file holds 32 registers. Multiply and divide are separate multi-cycle units: the processor starts one, then stalls until the result is ready.
         </p>
         <p>
-          I also wrote a Python assembler for the instruction set. The assembler accepts custom instructions, which is what the FPGA game uses to draw sprites. The game itself is a separate project.
+          The last checkpoint is a five-stage pipeline: fetch, decode, execute, memory, and writeback. It bypasses results that a later instruction needs immediately, and it stalls when a load is still in flight and the next instruction reads that register.
+        </p>
+        <p>
+          I also wrote a Python assembler for the course instruction set. It can accept extra instructions, but the <a href="./fpga-pacman.html">FPGA Pac-Man</a> game does not use one to draw sprites. That game is a separate project. It uses the normal instructions and talks to the display through an input register and an output register.
         </p>
         <p>
           <a href="https://github.com/Hanlin2005/FPGA-Pac-Man">GitHub</a>

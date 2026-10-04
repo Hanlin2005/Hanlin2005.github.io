@@ -38,10 +38,13 @@
 
       <div class="blogparagraphs">
         <p>
-          I am building a Python package that computes scientometrics for the Liberata system. The data is a graph of manuscripts and contributors, and the metrics run on sparse matrices.
+          I am building a Python package that computes scientometrics for Liberata. The system treats publishing as a marketplace: manuscripts cite each other, and contributors earn academic capital from work they author, review, or replicate. The library measures how that capital and influence move through the citation graph.
         </p>
         <p>
-          The library covers portfolio measures on a set of manuscripts, market and system-health measures, and graph measures on the citation network. It can also build synthetic graphs for tests.
+          The inputs are sparse matrices. One is the citation matrix between manuscripts. Another assigns each manuscript a share for its authors, reviewers, and replicators. A capital matrix is built from those two. On top of that I compute portfolio measures such as total capital, concentration, and a Gini coefficient, plus market measures for fairness and risk, graph measures on the citation network, and system-health indicators. The same package can generate synthetic citation graphs so the metrics can be tested on a known structure.
+        </p>
+        <p>
+          The <a href="./agent-simulation.html">agent simulation</a> is a separate project. It is where those marketplace rules are actually played out.
         </p>
         <p>
           <a href="https://github.com/Liberata-Academic-Publishing/liberata-scientometrics">GitHub</a>

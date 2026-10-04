@@ -38,10 +38,13 @@
 
       <div class="blogparagraphs">
         <p>
-          I built an agent-based simulation of Liberata’s peer-review marketplace. Each timestep, an agent either writes its own paper or spends the time on a review.
+          I built an agent-based simulation of Liberata’s peer-review marketplace. Each agent has a quality talent and a speed talent. A paper’s quality is drawn from a Gaussian around the author’s quality talent, and that quality sets both how fast the paper accrues value and how much a review can add. Each timestep the agent either writes or reviews. It cannot do both at once.
         </p>
         <p>
-          A paper can be reviewed once. The market can award it to the eligible reviewer with the highest expected claim value, and the author’s offer depends on that reviewer’s history. Reviews can run continuously, so the agent chooses when to stop, or for a fixed good-faith or bad-faith length.
+          A paper is listed one timestep after it is published, and it can be reviewed once. The market can award it to the eligible reviewer with the highest expected claim value. The author’s offer to each reviewer depends on that reviewer’s history of how much their reviews improve a paper. In continuous mode the reviewer chooses when to stop. In discrete mode the reviewer locks in a good-faith or bad-faith length at the start, and a bad-faith review is a single timestep. Review effort raises the paper’s accrual, with most of the gain around the good-faith threshold.
+        </p>
+        <p>
+          The agents can be random, heuristic, tabular Q-learning, or a deep Q-network. A run records who wrote, who reviewed, good-faith and bad-faith reviews, academic capital, and inequality. The <a href="./scientometrics.html">scientometrics library</a> is a separate project. It computes the metrics this marketplace is built around.
         </p>
         <p>
           <a href="https://github.com/Liberata-Academic-Publishing/Agent-Simulation-Environment">GitHub</a>

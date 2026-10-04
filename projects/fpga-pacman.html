@@ -38,10 +38,13 @@
 
       <div class="blogparagraphs">
         <p>
-          For ECE 350 I put Pac-Man on an FPGA. The picture goes out through a VGA controller, the sound goes out through an audio controller, and the game itself is an assembly program.
+          For ECE 350 I put Pac-Man on an FPGA. The display is 640 by 480 VGA, clocked at 25 MHz from the board’s 100 MHz clock, and the maze and characters are 20 by 20 sprites. Python scripts turn the pictures into memory files the display reads. The controls are the board buttons. The project also has a PWM audio output and a waka sample.
         </p>
         <p>
-          The program runs on a processor I built in the same course. That processor is a separate project.
+          The game itself is a few hundred lines of assembly, and it runs on a processor I built in the same course. That processor is a <a href="./processor.html">separate project</a>. The program does not draw pixels. Register 1 is the input and register 2 is the output. Buttons and the walls next to Pac-Man arrive in register 1, and the program writes Pac-Man’s direction into register 2. The VGA hardware uses that to move the sprite. If the next cell is a wall, the program keeps the old direction when that way is still open, and stops when it is not.
+        </p>
+        <p>
+          The ghost uses the same registers. Its wall bits and its distance to Pac-Man in each direction come in on the input. In chase mode it takes the open direction with the shortest distance, and it does not reverse unless it has to. One bit of the input switches it to flee mode, where it takes the open direction with the greatest distance. A double-dabble routine turns a binary count into decimal digits for the score sprites.
         </p>
         <p>
           <a href="https://github.com/Hanlin2005/FPGA-Pac-Man">GitHub</a>

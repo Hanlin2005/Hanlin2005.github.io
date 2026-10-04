@@ -38,10 +38,13 @@
 
       <div class="blogparagraphs">
         <p>
-          I simulated ground-state estimation for Heisenberg models with IBM Qiskit, and compared a one-dimensional hardware layout with a two-dimensional one.
+          For ECE 520 I used the variational quantum eigensolver to estimate the ground state of a 4-qubit XYZ Heisenberg model. The circuit prepares a trial state, a classical optimizer updates the parameters, and the quantum part only estimates the energy. I ran it in Qiskit on the Aer simulator.
         </p>
         <p>
-          A circuit that does not match the connectivity of the device has to insert SWAP gates. I modelled that gate error and found that the topological mismatch adds a clear amount of noise. Among the optimizers I tried, SPSA held up better than COBYLA once the circuit was noisy.
+          The question was what happens when the problem’s connectivity does not match the chip. I crossed a 1D and a 2D problem with a linear chain and a square grid. The ansatz was EfficientSU2, two layers of Ry rotations and CNOTs, with the entanglement laid out like the problem rather than like the chip. A missing link has to be routed with SWAP gates, and each SWAP is three CNOT gates. I put a depolarizing error of 0.03 on every CNOT, so each extra SWAP adds noise and nothing else does.
+        </p>
+        <p>
+          Without noise, the geometry barely mattered. With noise, a 2D problem on a linear chip was the costly case: the compiler inserted six SWAPs and the energy error was about twice the matched 1D run. A 1D problem on a square chip was not penalized, because the extra links went unused. SPSA stayed closer to the true energy. COBYLA converged in fewer steps and more often settled in a local minimum.
         </p>
         <p>
           <a href="https://github.com/Hanlin2005/Analyzing-VQE-Geometry">GitHub</a>
