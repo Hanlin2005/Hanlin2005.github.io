@@ -144,12 +144,34 @@ img{
 }
 
 .headbar a{
+  position: relative;
   color: var(--link);
   font-weight: 500;
   font-size: clamp(1.05rem, 1.7vw, 1.45rem);
   padding: clamp(10px, 1.1vw, 14px) clamp(10px, 1.3vw, 20px);
   text-decoration: none;
   transition: color 0.3s ease;
+}
+
+.headbar a::after{
+  content: "";
+  position: absolute;
+  left: 0.55em;
+  right: 0.55em;
+  bottom: 0.2em;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--heading-accent);
+  transform: translateY(5px) scaleY(0);
+  transform-origin: center bottom;
+  transition: transform 0.18s ease;
+  pointer-events: none;
+}
+
+.headbar a:hover::after,
+.headbar a:focus-visible::after,
+.headbar a[aria-current="page"]::after{
+  transform: translateY(0) scaleY(1);
 }
 
 .theme-toggle{
@@ -234,20 +256,10 @@ a:hover {
 
 .experience {
   width: 100%;
-  margin-top: 48px;
-  padding: 16px 30px 32px;
-  background-color: var(--experience-bg);
-  border-top: 1px solid var(--band-border);
-  border-bottom: 1px solid var(--band-border);
-}
-
-.experiencepage .experience {
-  margin-top: 0;
-}
-
-.experience h1 {
-  text-align: center;
-  margin-bottom: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 30px 60px;
+  background-color: transparent;
 }
 
 .exprole {
@@ -1066,8 +1078,8 @@ a:hover {
       width: 52%;
     }
     .experience {
-      margin-top: 32px;
-      padding: 12px 16px 20px;
+      margin-top: 0;
+      padding: 16px 16px 40px;
     }
     .explogo {
       flex-basis: 64px;
@@ -1179,5 +1191,8 @@ a:hover {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .headbar a::after {
+    transition: none;
   }
 }
