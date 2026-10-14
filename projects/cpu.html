@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Pipelined Processor</title>
+    <title>Pipelined CPU</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -19,7 +19,9 @@
         <a href="../index.html"> ABOUT ME</a>
         <a href="../experience.html"> EXPERIENCE</a>
         <a href="../projects.html"> PROJECTS</a>
+        <!-- Blog is not ready yet. Uncomment to show it again.
         <a href="../blogs.html"> BLOG</a>
+        -->
       </ul>
     </nav>
     <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
@@ -33,18 +35,23 @@
 
     <div class="blog">
       <p class="blogdate"><a href="../projects.html">Projects</a></p>
-      <h1 class="blogtitle">Pipelined Processor</h1>
+      <h1 class="blogtitle">Pipelined CPU</h1>
       <p class="blogdate">Tools: Verilog, Python</p>
+
+      <div class="blogimage">
+        <img src="cpu.png" alt="Five-stage CPU datapath with instruction memory, a register file, data memory, and pipeline registers.">
+        <p>Five-stage pipeline: fetch, decode, execute, memory, and writeback. Red lines are bypass paths.</p>
+      </div>
 
       <div class="blogparagraphs">
         <p>
-          For ECE 350 I built a processor in Verilog, in four checkpoints. The ALU does add, subtract, AND, OR, logical shift left, and arithmetic shift right, and it reports not-equal, less-than, and overflow. The register file holds 32 registers. Multiply and divide are separate multi-cycle units: the processor starts one, then stalls until the result is ready.
+          For ECE 350 I built a CPU in Verilog, in four checkpoints. The ALU does add, subtract, AND, OR, logical shift left, and arithmetic shift right, and it reports not-equal, less-than, and overflow. The register file holds 32 registers. Multiply and divide are separate multi-cycle units: the CPU starts one, then stalls until the result is ready.
         </p>
         <p>
           The last checkpoint is a five-stage pipeline: fetch, decode, execute, memory, and writeback. It bypasses results that a later instruction needs immediately, and it stalls when a load is still in flight and the next instruction reads that register.
         </p>
         <p>
-          I also wrote a Python assembler for the course instruction set. It can accept extra instructions, but the <a href="./fpga-pacman.html">FPGA Pac-Man</a> game does not use one to draw sprites. That game is a separate project. It uses the normal instructions and talks to the display through an input register and an output register.
+          I also wrote a Python assembler for the course instruction set. It can accept extra instructions, but the <a href="./fpga-pacman.html">FPGA Pac-Man</a> game does not use one to draw sprites. That game is a separate project. It uses the normal instructions and talks to the display through registers wired straight to the VGA controller.
         </p>
         <p>
           <a href="https://github.com/Hanlin2005/FPGA-Pac-Man">GitHub</a>

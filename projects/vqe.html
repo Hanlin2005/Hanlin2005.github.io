@@ -19,7 +19,9 @@
         <a href="../index.html"> ABOUT ME</a>
         <a href="../experience.html"> EXPERIENCE</a>
         <a href="../projects.html"> PROJECTS</a>
+        <!-- Blog is not ready yet. Uncomment to show it again.
         <a href="../blogs.html"> BLOG</a>
+        -->
       </ul>
     </nav>
     <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
@@ -34,17 +36,23 @@
     <div class="blog">
       <p class="blogdate"><a href="../projects.html">Projects</a></p>
       <h1 class="blogtitle">Variational Quantum Eigensolver</h1>
+      <p class="blogdate">December 2025</p>
       <p class="blogdate">Tools: Python, Qiskit</p>
+
+      <div class="blogimage">
+        <img src="vqe.png" alt="Side-by-side noisy energy convergence for COBYLA and SPSA. Four curves compare 1D and 2D problems on 1D and 2D hardware.">
+        <p>Noisy convergence for COBYLA and SPSA. The green trace is the 2D problem on a linear chip, which stays well above the matched runs.</p>
+      </div>
 
       <div class="blogparagraphs">
         <p>
-          For ECE 520 I used the variational quantum eigensolver to estimate the ground state of a 4-qubit XYZ Heisenberg model. The circuit prepares a trial state, a classical optimizer updates the parameters, and the quantum part only estimates the energy. I ran it in Qiskit on the Aer simulator.
+          For ECE 520 I used the variational quantum eigensolver to estimate the ground-state energy of a 4-qubit XYZ Heisenberg model. The variational principle says any trial state sits at or above the true ground-state energy, so a classical optimizer can push that energy down. The quantum circuit only prepares the trial state and estimates each Pauli term in the Hamiltonian. I ran the loop in Qiskit on the Aer simulator.
         </p>
         <p>
-          The question was what happens when the problem’s connectivity does not match the chip. I crossed a 1D and a 2D problem with a linear chain and a square grid. The ansatz was EfficientSU2, two layers of Ry rotations and CNOTs, with the entanglement laid out like the problem rather than like the chip. A missing link has to be routed with SWAP gates, and each SWAP is three CNOT gates. I put a depolarizing error of 0.03 on every CNOT, so each extra SWAP adds noise and nothing else does.
+          The model is an anisotropic Heisenberg Hamiltonian, with different couplings on X, Y, and Z and a field on each spin. The exact ground-state energy is about −4.37 on the chain and about −5.46 on the square. I crossed those two problem graphs with two chips, a linear chain and a square, so the four trials are matched 1D, matched 2D, a 2D problem on a chain, and a 1D problem on a square. The ansatz is EfficientSU2: two layers of Ry rotations and CNOTs, with the entanglement laid out like the problem. A missing link is routed with SWAP gates, and each SWAP is three CNOT gates. A depolarizing error of 0.03 on every CNOT makes that routing the source of the extra noise.
         </p>
         <p>
-          Without noise, the geometry barely mattered. With noise, a 2D problem on a linear chip was the costly case: the compiler inserted six SWAPs and the energy error was about twice the matched 1D run. A 1D problem on a square chip was not penalized, because the extra links went unused. SPSA stayed closer to the true energy. COBYLA converged in fewer steps and more often settled in a local minimum.
+          Without noise, the geometry barely changed the result. With noise, a 2D problem on a linear chip was the costly case. The compiler inserted six SWAPs, the depth went to 25, and the energy error was about 3.9, against about 1.6 and zero SWAPs for the matched 1D run. A 1D problem on a square chip needed one SWAP. With COBYLA its noisy error stayed near 1.53, in line with the matched 1D run, since the square already contains the chain. On the convergence plot, COBYLA flattened by about 20 iterations and often sat in a local minimum. SPSA was still descending near 100 iterations.
         </p>
         <p>
           <a href="https://github.com/Hanlin2005/Analyzing-VQE-Geometry">GitHub</a>
