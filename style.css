@@ -94,6 +94,20 @@ body {
   color: var(--text);
 }
 
+body.home {
+  background-color: #f3f2ee;
+}
+
+html[data-theme="dark"] body.home {
+  background-color: #131518;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body.home {
+    background-color: #131518;
+  }
+}
+
 *, *:before, *:after{
   box-sizing:inherit;
   margin:0;
@@ -341,6 +355,7 @@ a:hover {
 #contactinfo a{
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   padding: 0.75rem 1.25rem;
   border: 1px solid color-mix(in srgb, var(--text) 28%, var(--contact-bg));
   border-radius: 999px;
@@ -348,6 +363,12 @@ a:hover {
   color: var(--text);
   font-size: 1.05rem;
   font-weight: 500;
+}
+
+#contactinfo a svg{
+  width: 16px;
+  height: 16px;
+  flex: none;
 }
 
 #contactinfo a:hover{
