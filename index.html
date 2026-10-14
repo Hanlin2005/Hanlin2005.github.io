@@ -53,7 +53,7 @@
               Email
             </a>
             <a href = "https://www.linkedin.com/in/hanlin2005">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.5 9H4V20h2.5V9zM5.2 4A1.6 1.6 0 1 0 5.2 7.2 1.6 1.6 0 0 0 5.2 4zM20 20h-2.5v-5.6c0-1.8-.8-2.4-1.8-2.4s-2 .9-2 2.5V20H11V9h2.4v1.5c.5-.9 1.7-1.8 3.4-1.8 2.3 0 4.2 1.5 4.2 4.7V20z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
             <a href = "https://github.com/Hanlin2005">
@@ -65,17 +65,68 @@
         </div>
 
         <div class = "rightintro">
-          <div id = "headshot">
-            <img src = "./Profile.jpg" alt = "headshot">
-          </div>
-          <div id = "name">
-            <h1>Hanlin Wang</h1>
-          </div>
-          <div id = "education">
-            <p>Electrical & Computer Engineering and Physics Student</p>
+          <div class="portrait">
+            <div id="headshot">
+              <img src="./Profile.jpg" alt="Portrait of Hanlin Wang">
+            </div>
+            <h2 id="name">Hanlin Wang</h2>
+            <p class="roleline">Electrical &amp; Computer Engineering and Physics · Duke University</p>
           </div>
         </div>
       </div>
+
+      <section class="proofs" aria-label="Experience">
+        <a class="proof" href="./experience.html">
+          <span>Lenovo</span>
+          <strong>Automation Development Intern</strong>
+          <p>June 2026 – July 2026</p>
+        </a>
+        <a class="proof" href="./experience.html">
+          <span>Liberata</span>
+          <strong>Team Lead of Algorithms Team, Metrics Library Developer</strong>
+          <p>January 2026 – Present</p>
+        </a>
+        <a class="proof" href="./experience.html">
+          <span>General Robotics Lab</span>
+          <strong>Undergraduate Research Intern</strong>
+          <p>June 2025 – September 2025</p>
+        </a>
+      </section>
+
+      <section class="homework">
+        <div class="homeworkinner">
+        <div class="homeworkhead">
+          <h1>Selected Projects</h1>
+          <a href="./projects.html">All projects</a>
+        </div>
+        <div class="homepicks">
+          <a href="./projects/agent-simulation.html" class="projectcard">
+            <img class="fit" src="./projects/agentsimulation.png" alt="Review prices and market pressure over 2,000 timesteps in the Liberata agent simulation">
+            <div class="cardcontent">
+              <h2>Liberata Agent Simulation</h2>
+              <p class="post-meta">2026</p>
+              <p>Agents write or review in Liberata’s single-review marketplace.</p>
+            </div>
+          </a>
+          <a href="./projects/julia-chess.html" class="projectcard">
+            <img src="./projects/JuliaEngine.png" alt="Julia chess engine">
+            <div class="cardcontent">
+              <h2>JuliaChess</h2>
+              <p class="post-meta">Ongoing Project</p>
+              <p>Creating a chess engine in Julia and competing on lichess.org.</p>
+            </div>
+          </a>
+          <a href="./projects/guided-recovery.html" class="projectcard">
+            <img src="./projects/recovery.png" alt="Exploded view of the guided recovery module">
+            <div class="cardcontent">
+              <h2>Guided Recovery System</h2>
+              <p class="post-meta">2023 – 2025</p>
+              <p>The first guided recovery system at Duke AERO.</p>
+            </div>
+          </a>
+        </div>
+        </div>
+      </section>
 
       <section class="life" id="about">
         <div class="lifeinner">
@@ -105,40 +156,6 @@
               <p>This summer, I fell in love with scuba diving. As some people put it, we're born too late to explore the earth, born too early to explore the universe. However, we're just in time to explore the secrets of the ocean. Scuba diving satisfies this sense of adventure and exploration. In fact, scuba diving was only invented in the 1940s. It's a completely different world underwater, and I am deeply fascinated by it.</p>
             </div>
           </article>
-        </div>
-        </div>
-      </section>
-
-      <section class="homework">
-        <div class="homeworkinner">
-        <h1>Selected Projects</h1>
-        <div class="homepicks">
-          <a href="./projects/pinn-fluids.html" class="projectcard">
-            <img src="./projects/lidcavity.png" alt="Streamlines of a lid-driven cavity">
-            <div class="cardcontent">
-              <h2>Fluid Dynamics with PINNs</h2>
-              <p class="post-meta">Summer 2025</p>
-              <p>Transfer learning of physics-informed networks for fluid mechanics.</p>
-            </div>
-          </a>
-          <a href="./projects/fractal-gripper.html" class="projectcard">
-            <video muted preload="metadata">
-              <source src="./projects/GripperAnimation.mp4#t=1" type="video/mp4">
-            </video>
-            <div class="cardcontent">
-              <h2>Fractal Robotic Gripper</h2>
-              <p class="post-meta">July 2025</p>
-              <p>A gripper modelled in Fusion and simulated in PyBullet.</p>
-            </div>
-          </a>
-          <a href="./projects/guided-recovery.html" class="projectcard">
-            <img src="./projects/recovery.png" alt="Exploded view of the guided recovery module">
-            <div class="cardcontent">
-              <h2>Guided Recovery System</h2>
-              <p class="post-meta">2023 – 2025</p>
-              <p>The first guided recovery system at Duke AERO.</p>
-            </div>
-          </a>
         </div>
         </div>
       </section>

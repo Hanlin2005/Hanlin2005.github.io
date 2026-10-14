@@ -335,6 +335,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding: 20px;
 }
 
 .leftintro{
@@ -389,7 +391,7 @@ a:hover {
 }
 
 #description{
-  font-size: 1.8rem;
+  font-size: 1.45rem;
 }
 #description p{
   margin-top: 0;
@@ -401,19 +403,99 @@ a:hover {
   margin-top: 0px;
 }
 
+.portrait{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 18px;
+}
 #headshot{
   display: flex;
   align-items: center;
   justify-content: center;
-  width:60%;
+  width: 58%;
   padding: 10px;
   border-radius: 20%;
   box-shadow: 0 4px 15px var(--shadow-card);
-  margin-top: 50px;
+  margin-top: 0;
   overflow: hidden;
 }
 #headshot img{
   border-radius: 20%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait #name{
+  margin: 0.7rem 0 0.25rem;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--name);
+}
+.portrait .roleline{
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.proofs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 8px auto 36px;
+  padding: 0 30px;
+}
+
+.proof {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 100%;
+  padding: 16px 16px 15px;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--text);
+}
+
+.proof span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.proof strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.proof p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.proof:hover {
+  border-color: var(--link-hover);
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .proofs {
+    grid-template-columns: 1fr;
+  }
 }
 
 #name{
@@ -426,22 +508,51 @@ a:hover {
 /* Outside the lab */
 
 .homework {
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
   margin-top: 0;
-  padding: 48px 30px 56px;
-  background-color: var(--homework-bg);
-  border-top: 1px solid var(--band-border);
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0 30px 56px;
+  background-color: transparent;
   border-bottom: 1px solid var(--band-border);
+  box-sizing: border-box;
+}
+
+.homework + .life {
+  margin-top: 0;
+}
+
+.homeworkhead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.homeworkhead a {
+  flex: none;
+  font-weight: 600;
+  color: var(--heading-accent);
 }
 
 .homeworkinner {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
+  padding-top: 48px;
+  border-top: 1px solid var(--band-border);
 }
 
 .homework h1 {
   text-align: center;
   margin: 36px 0 20px;
+}
+
+.homework .homeworkhead h1 {
+  margin: 0;
+  text-align: left;
 }
 
 .homeworkinner > h1:first-child {
@@ -957,7 +1068,7 @@ a:hover {
         font-size: 1.75rem;
     }
     #title{
-      text-align:center;
+      text-align: center;
     }
     .leftblogpanel, .rightblogpanel {
       flex: 0;
@@ -966,7 +1077,7 @@ a:hover {
       width: 90%;
     }
     #headshot{
-      width: 80%;
+      width: 52%;
     }
     .experience {
       margin-top: 32px;
@@ -988,7 +1099,10 @@ a:hover {
       gap: 12px;
     }
     .homework {
-      padding: 32px 16px 40px;
+      padding: 0 16px 40px;
+    }
+    .homeworkinner {
+      padding-top: 32px;
     }
     .homeposts {
       grid-template-columns: 1fr;
@@ -996,6 +1110,9 @@ a:hover {
     .life {
       margin-top: 32px;
       padding: 32px 16px 40px;
+    }
+    .proofs {
+      padding: 0 16px;
     }
     .lifecards {
       max-width: none;
@@ -1036,21 +1153,39 @@ a:hover {
 
 @media (max-width: 999px) {
   #description {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 }
 
 @media (min-width: 1000px) {
   .intro {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
   }
 
   .rightintro {
-    flex: 1;
+    height: 0;
+    min-height: 100%;
+    padding: 20px 20px 20px 8px;
+  }
+
+  .portrait {
+    height: 100%;
+    min-height: 0;
+    margin-bottom: 0;
+  }
+
+  #headshot {
+    width: auto;
+    max-width: 100%;
+    max-height: calc(100% - 4.6rem);
+    flex: 1 1 auto;
+    min-height: 0;
   }
 
   .leftintro {
-    flex: 1.5;
+    min-width: 0;
   }
 }
 
